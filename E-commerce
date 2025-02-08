@@ -1,0 +1,201 @@
+How to select mutiple porduct in asp.net
+In this code
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="shop.aspx.cs" Inherits="shop" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search" />
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Shop Detail</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active">Shop Detail </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Shop Detail  -->
+    <div class="shop-detail-box-main">
+        <div class="container">
+            <div class="row">
+           
+                <div class="col-xl-5 col-lg-5 col-md-6">
+                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"> <asp:Image ID="ImageButton1" runat="server" class="d-block w-100" alt="First slide"/> </div>
+                            <div class="carousel-item"><asp:Image ID="ImageButton2" runat="server" class="d-block w-100"  alt="Second slide" /></div>
+                            <div class="carousel-item"><asp:Image ID="Image1" runat="server" class="d-block w-100" alt="Second slide"/></div>
+                        </div>
+                      
+                       
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-6">
+                    <%----%>
+                    <div class="single-product-details">
+
+                            
+                                <asp:Label ID="product" runat="server" ></asp:Label> <br />
+                       Rs. <asp:Label runat="server" ID="Rupees1"><h2>Rupees</h2></asp:Label><br />
+                        
+                                <p>
+                                    <asp:Label ID="Details" runat="server" ></asp:Label> </p>
+                        
+                                <ul>
+                                    <li>
+                                        <div class="form-group size-st">
+                                            <label class="size-label">Size</label>
+                                            <br />
+                                            <asp:DropDownList ID="size" runat="server" class="selectpicker show-tick form-control">
+                                                <asp:ListItem>Size</asp:ListItem>
+                                                <asp:ListItem>M</asp:ListItem>
+                                                <asp:ListItem>L</asp:ListItem>
+                                                <asp:ListItem>XL</asp:ListItem>
+                                                <asp:ListItem>XXL</asp:ListItem>
+                                                <asp:ListItem>3XL</asp:ListItem>
+                                                <asp:ListItem>4XL</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="form-group quantity-box">
+                                            <label class="control-label">Quantity</label>
+                                            <asp:DropDownList ID="number" runat="server" class="selectpicker show-tick form-control">
+                                                <asp:ListItem>Select Quantity</asp:ListItem>  
+                                                <asp:ListItem>1</asp:ListItem>                                              
+                                                <asp:ListItem>2</asp:ListItem>
+                                                <asp:ListItem>3</asp:ListItem>
+                                                <asp:ListItem>4</asp:ListItem>
+                                                <asp:ListItem>5</asp:ListItem>
+                                                <asp:ListItem>6</asp:ListItem>
+                                                <asp:ListItem>7</asp:ListItem>
+                                            </asp:DropDownList>
+                                            <%--<input class="form-control" value="0" min="0" max="20" type="number">--%>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="price-box-bar">
+                                    <div class="cart-and-bay-btn">
+                                        <asp:LinkButton ID="LinkButton1" runat="server" class="btn hvr-hover" data-fancybox-close="" Text="Buy New"></asp:LinkButton>
+                                        <%--<asp:Button ID="buynew" runat="server" Text="Buy New" class="btn hvr-hover"  data-fancybox-close=""/>--%>
+                                        <asp:LinkButton ID="LinkButton2" runat="server" class="btn hvr-hover" data-fancybox-close="" Text="Add To Cart" OnClick="LinkButton2_Click"></asp:LinkButton>
+                                        <%--<asp:Button ID="add_to_cart" runat="server" Text="Add to cart" class="btn hvr-hover" data-fancybox-close=""/>--%>
+                                    </div>
+                                </div>
+
+                                <div class="add-to-btn">
+                                   
+                                    <div class="share-bar">
+                                        <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <!--fhgjfjierjfi-->
+           
+
+        </div>
+        <center>
+                                        <asp:LinkButton ID="LinkButton3" runat="server" class="btn hvr-hover" data-fancybox-close="" Text="Continue Shoping" OnClick="LinkButton3_Click" ></asp:LinkButton> 
+
+        </center>
+    </div>
+    <!-- End Cart -->
+
+    <%--</div>--%>
+
+</asp:Content>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Collections;
+using System.Configuration;
+
+public partial class shop : System.Web.UI.Page
+{
+    // Data Reading
+        SqlConnection asd;
+    SqlCommand df;
+    SqlDataAdapter zx;
+     protected void Page_Load(object sender, EventArgs e)
+    {
+        string path = ConfigurationManager.ConnectionStrings["connect"].ToString();
+        asd = new SqlConnection(path);
+        asd.Open();
+
+       
+        String S = "Select * from Product_Name where ProductId="+Request.QueryString["b"].ToString()+"";
+        zx = new SqlDataAdapter(S, asd);
+        DataSet ds = new DataSet();
+        zx.Fill(ds);
+        product.Text = ds.Tables[0].Rows[0][1].ToString();
+        Rupees1.Text = ds.Tables[0].Rows[0][2].ToString();
+        Details.Text = ds.Tables[0].Rows[0][4].ToString();
+        ImageButton1.ImageUrl = ds.Tables[0].Rows[0][7].ToString();
+
+        
+        
+
+    }
+     protected void LinkButton2_Click(object sender, EventArgs e)
+     {
+         string price1 = "Select * from Product_Name where ProductId=" + Request.QueryString["b"].ToString() + "";
+         zx = new SqlDataAdapter(price1, asd);
+         DataSet ds = new DataSet();
+         zx.Fill(ds);
+         String price;
+         price = ds.Tables[0].Rows[0][3].ToString();
+         
+
+         String asd1 = "Insert into Add_Cart Values(" + Request.QueryString["b"].ToString() + ",'" +size.SelectedValue+ "'," + number.SelectedValue + ",'active','"+DateTime.Now.ToString()+"',"+price+",'"+Session["email1"].ToString() +"')";
+         df = new SqlCommand(asd1, asd);
+         df.ExecuteNonQuery();
+         Response.Write("<acript>alert('Data Inseret into Scessfull')</script>");
+         Response.Redirect("cart.aspx");
+     }
+
+
+     protected void LinkButton3_Click(object sender, EventArgs e)
+     {
+         Response.Redirect("Add_more.aspx");
+         //string A = "Select * from Product_Name where ProductId=" + Request.QueryString["a"] + ToString() + "";
+         //zx = new SqlDataAdapter(A, asd);
+         //DataSet dsw = new DataSet();
+         //zx.Fill(dsw);
+         //product.Text = dsw.Tables[0].Rows[0][1].ToString();
+         //Rupees1.Text = dsw.Tables[0].Rows[0][2].ToString();
+         //Details.Text = dsw.Tables[0].Rows[0][4].ToString();
+         //ImageButton1.ImageUrl = dsw.Tables[0].Rows[0][7].ToString();
+     }
+}
